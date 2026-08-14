@@ -6,25 +6,78 @@ Template base para aplicaciones frontend con React + TypeScript + Vite, listo pa
 
 - React 19
 - Vite 8
-- TypeScript 5
-- React Router 7
+- TypeScript 6
+- React Router 8
 - Zustand
 - React Query
 - Axios
 - i18next + react-i18next
-- MUI 7 + Emotion
+- MUI 9 + Emotion
+- Babel 8
+- ESLint 10
 
 ## Requisitos
 
-- Node `22.12.0` o superior
-- NPM 9+
+- Node `24.11.0` o superior
+- NPM 11+
 
-Este repo incluye `.nvmrc` con la version recomendada.
+Este repo incluye `.nvmrc` con la version recomendada (`24.19.0`). Con una
+instalacion de NVM compatible con `.nvmrc`:
 
 ```bash
 nvm install
 nvm use
 node -v
+```
+
+Con NVM for Windows:
+
+```bash
+nvm install 24.19.0
+nvm use 24.19.0
+node -v
+```
+
+## Usar como template sin conservar el historial original
+
+Desde Git Bash en Windows, clona el repositorio y elimina sus metadatos Git:
+
+```bash
+git clone URL_DEL_REPO_ORIGINAL mi-proyecto
+cd mi-proyecto
+
+rm -rf .git
+
+git init -b main
+git add .
+git commit -m "chore: initialize project"
+```
+
+Luego crea un repositorio vacio en GitHub, sin README, `.gitignore` ni licencia,
+y conecta el proyecto nuevo:
+
+```bash
+git remote add origin URL_DEL_REPO_NUEVO
+git push -u origin main
+```
+
+Este procedimiento conserva los archivos del template, pero elimina las ramas,
+el historial de commits y el remoto del repositorio original. Verifica que estas
+dentro de `mi-proyecto` antes de ejecutar `rm -rf .git`.
+
+Si prefieres otra rama inicial, reemplaza `main` en `git init` y `git push`, por
+ejemplo:
+
+```bash
+git init -b develop
+git push -u origin develop
+```
+
+## Instalacion y ejecucion
+
+```bash
+npm install
+npm run dev
 ```
 
 ## Variables de entorno
